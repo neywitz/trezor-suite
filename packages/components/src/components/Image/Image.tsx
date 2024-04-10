@@ -6,10 +6,11 @@ import { resolveStaticPath } from '../../utils/resolveStaticPath';
 export const PNG_PATH = 'images/png';
 export const SVG_PATH = 'images/svg';
 
-const StyledImage = styled.img`
+const StyledImage = styled.img<{ $shift?: boolean }>`
     /* should not overflow it's container */
     max-width: 100%;
-    filter: ${({ theme }) => theme.IMAGE_FILTER};
+    filter: ${({ $shift, theme }) =>
+        $shift ? 'hue-rotate(-60deg)  brightness(1.4) saturate(1.2)' : theme.IMAGE_FILTER};
 `;
 
 const buildSrcSet = <
@@ -57,6 +58,7 @@ export const Image = (props: ImageProps) => {
                 <StyledImage
                     src={resolveStaticPath(`${PNG_PATH}/${PNG_IMAGES[image]}`)}
                     srcSet={buildSrcSet(PNG_PATH, PNG_IMAGES, image)}
+                    $shift={!image.includes('TREZOR') && !image.includes('ERROR')}
                     {...rest}
                 />
             );

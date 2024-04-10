@@ -23,6 +23,14 @@ export const mapElevationToBorder = ({
 }: StyledComponentElevationProps): CSSColor =>
     theme[`borderElevation${$elevation === -1 ? 'Negative' : $elevation}`];
 
+palette.darkSecondaryGreen800 = palette.lightSecondaryEmerald800 = '#f7931a';
+palette.darkSecondaryGreen900 = palette.lightSecondaryEmerald900 = '#ffac47';
+palette.darkPrimaryForest100 = '#201c0d';
+palette.darkPrimaryForest200 = '#2e260e';
+palette.darkPrimaryForest800 = palette.lightPrimaryForest800 = '#ffb254';
+palette.darkPrimaryForest900 = palette.lightPrimaryForest900 = '#ffc278';
+palette.lightPrimaryForest200 = '#fffade';
+
 // ---------------------------
 
 // @TODO create iconDefaultInverse (packages/suite/src/components/suite/banners/Banner.tsx)

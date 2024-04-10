@@ -114,6 +114,42 @@ const ChildrenWrapper = styled.div`
     max-width: ${MAX_ONBOARDING_WIDTH}px;
 `;
 
+const AfueraLogo = styled(TrezorLogo)`
+    position: relative;
+    left: 140px;
+    transform: rotateZ(331deg);
+    margin-top: -70px;
+
+    svg {
+        fill: #f7931a;
+        animation: flash ease-in-out 1.5s infinite;
+        @keyframes flash {
+            100%,
+            0% {
+                filter: drop-shadow(0 0 10px #f7931a00);
+            }
+            10% {
+                filter: drop-shadow(0 0 10px #f7931aff);
+            }
+            40% {
+                filter: drop-shadow(0 0 10px #f7931a33);
+            }
+            60% {
+                filter: drop-shadow(0 0 10px #f7931a44);
+            }
+            70% {
+                filter: drop-shadow(0 0 10px #f7931aff);
+            }
+            75% {
+                filter: drop-shadow(0 0 10px #f7931a22);
+            }
+            80% {
+                filter: drop-shadow(0 0 10px #f7931aff);
+            }
+        }
+    }
+`;
+
 interface WelcomeLayoutProps {
     children: ReactNode;
 }
@@ -147,7 +183,8 @@ const Left = () => {
                         }}
                     >
                         <Expander data-test="@welcome/title">
-                            <TrezorLogo type="symbol" width="57px" />
+                            <TrezorLogo type="horizontal" width="300px" />
+                            <AfueraLogo type="afuera" width="200px" />
                         </Expander>
 
                         <LinksContainer>

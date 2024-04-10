@@ -3,6 +3,7 @@ import styled, { useTheme } from 'styled-components';
 import { LOGOS } from './trezorLogos';
 
 export type TrezorLogoType =
+    | 'afuera'
     | 'horizontal'
     | 'vertical'
     | 'symbol'

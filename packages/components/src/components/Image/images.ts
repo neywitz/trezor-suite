@@ -1,6 +1,7 @@
 export type SvgImage = keyof typeof SVG_IMAGES;
 
 export const SVG_IMAGES = {
+    AFUERA: 'afuera.svg',
     UNI_ERROR: 'uni-error.svg',
     UNI_SUCCESS: 'uni-success.svg',
     UNI_WARNING: 'uni-warning.svg',
