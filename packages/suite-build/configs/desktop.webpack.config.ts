@@ -22,6 +22,9 @@ const config: webpack.Configuration = {
     output: {
         path: path.join(baseDir, 'build'),
     },
+    resolve: {
+        aliasFields: ['afuera', '...'],
+    },
     plugins: [
         new CopyPlugin({
             patterns: ['bin', 'fonts', 'images', 'videos', 'guide/assets']

@@ -147,5 +147,12 @@
         "stylelint": "^16.2.1",
         "stylelint-config-standard": "^36.0.0",
         "typescript-styled-plugin": "^0.18.3"
+    },
+    "afuera": {
+        "./src/views/dashboard/components/T3T1PromoBanner": "./src/afuera/component.js",
+        "./src/views/dashboard/components/AssetsView": "./src/afuera/component.js",
+        "./src/views/dashboard/components/StakeEthCard/StakeEthCard": "./src/afuera/component.js",
+        "./src/views/dashboard/components/PromoBanner": "./src/afuera/component.js",
+        "./src/views/settings/SettingsGeneral/DesktopSuiteBanner": "./src/afuera/component.js"
     }
 }

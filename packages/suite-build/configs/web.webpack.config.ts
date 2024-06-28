@@ -16,6 +16,9 @@ const config: webpack.Configuration = {
     output: {
         path: path.join(baseDir, 'build'),
     },
+    resolve: {
+        aliasFields: ['afuera', 'browser', '...'],
+    },
     plugins: [
         new CopyPlugin({
             patterns: ['browser-detection', 'fonts', 'images', 'oauth', 'videos', 'guide/assets']
