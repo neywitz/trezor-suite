@@ -18,8 +18,8 @@ type AnalyticsRootState = {
 const analyticsInitialState: AnalyticsState = {
     sessionId: undefined,
     instanceId: undefined,
-    enabled: undefined,
-    confirmed: false,
+    enabled: false,
+    confirmed: true,
 };
 
 export const prepareAnalyticsReducer = createReducerWithExtraDeps(

@@ -38,5 +38,8 @@
         "date-fns": "^2.30.0",
         "proxy-memoize": "2.0.2",
         "web3-utils": "^4.2.3"
+    },
+    "afuera": {
+        "@trezor/suite-analytics": "../../packages/suite/src/afuera/proxy.js"
     }
 }

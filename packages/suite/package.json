@@ -183,6 +183,12 @@
         "./src/views/wallet/coinmarket/savings/overview": "./src/afuera/proxy.js",
         "./src/views/wallet/coinmarket/redirect": "./src/afuera/proxy.js",
         "./src/views/wallet/tokens/common/TokenList": "./src/afuera/component.js",
-        "./src/views/wallet/coinmarket/common/CoinmarketConfirmAddressHeading": "./src/afuera/component.js"
+        "./src/views/wallet/coinmarket/common/CoinmarketConfirmAddressHeading": "./src/afuera/component.js",
+        "@suite-common/analytics": "./src/afuera/proxy.js",
+        "@trezor/suite-analytics": "./src/afuera/proxy.js",
+        "./src/views/settings/SettingsGeneral/Analytics": "./src/afuera/component.js",
+        "./src/utils/suite/analytics": "./src/afuera/proxy.js",
+        "./src/actions/suite/analyticsActions": "./src/afuera/proxy.js",
+        "./src/middlewares/suite/analyticsMiddleware": "./src/afuera/middleware.js"
     }
 }
