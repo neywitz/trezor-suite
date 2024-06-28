@@ -56,6 +56,12 @@ const GlobalStyle = createGlobalStyle<{ theme: SuiteThemeColors }>`
     .floating {
         max-width: calc(100vw - 10px);
     }
+
+    button[data-test="@dashboard/buy-button"],
+    button[data-test="@accounts/empty-account/buy"],
+    button[data-test="@wallet/menu/wallet-coinmarket-buy"] {
+        display: none;
+    }
 `;
 
 export default GlobalStyle;

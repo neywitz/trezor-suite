@@ -8,6 +8,8 @@ const proxy = new Proxy(function () {}, {
     get: (_target, name, _receiver) => {
         log('get', name);
         switch (name) {
+            case 'showLeaveModal': // state.wallet.coinmarket.sell.showLeaveModal in walletMiddleware
+                return false;
             default:
                 return proxy;
         }
