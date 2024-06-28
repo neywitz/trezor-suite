@@ -11,6 +11,8 @@ import {
     SettingsSectionItem,
 } from 'src/components/settings';
 import { CoinGroup, TooltipSymbol, Translation } from 'src/components/suite';
+import { CustomBackends } from 'src/components/suite/modals/ReduxModal/UserContextModal/AdvancedCoinSettingsModal/CustomBackends/CustomBackends';
+import { NETWORKS } from 'src/config/wallet';
 import { useEnabledNetworks } from 'src/hooks/settings/useEnabledNetworks';
 import { SettingsAnchor } from 'src/constants/suite/anchors';
 import {
@@ -80,6 +82,18 @@ const getDiscoveryButtonAnimationConfig = (isConfirmed: boolean): MotionProps =>
 });
 
 export const SettingsCoins = () => {
+    const bitcoin = NETWORKS.find(({ symbol }) => symbol === 'btc')!;
+
+    return (
+        <SettingsLayout>
+            <StyledSettingsSection title={<Translation id="TR_BACKENDS" />} icon="BACKEND">
+                <CustomBackends network={bitcoin} onCancel={() => {}} />
+            </StyledSettingsSection>
+        </SettingsLayout>
+    );
+};
+
+export const SettingsCoins_OLD = () => {
     const { firmwareTypeBannerClosed } = useSelector(selectSuiteFlags);
 
     const isDiscoveryButtonVisible = useRediscoveryNeeded();

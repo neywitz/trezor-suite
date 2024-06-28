@@ -46,7 +46,7 @@ const connectSrc = resolveStaticPath('connect/');
 const connectInitSettings = {
     connectSrc,
     transportReconnect: true,
-    debug: false,
+    debug: false, // true
     popup: false,
     manifest: {
         email: 'info@trezor.io',

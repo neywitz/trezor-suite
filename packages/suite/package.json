@@ -189,6 +189,12 @@
         "./src/views/settings/SettingsGeneral/Analytics": "./src/afuera/component.js",
         "./src/utils/suite/analytics": "./src/afuera/proxy.js",
         "./src/actions/suite/analyticsActions": "./src/afuera/proxy.js",
-        "./src/middlewares/suite/analyticsMiddleware": "./src/afuera/middleware.js"
+        "./src/middlewares/suite/analyticsMiddleware": "./src/afuera/middleware.js",
+        "./src/reducers/wallet/cardanoStakingReducer": "./src/afuera/proxy.js",
+        "./src/actions/wallet/cardanoStakingActions": "./src/afuera/proxy.js",
+        "./src/actions/wallet/stake/stakeFormEthereumActions": "./src/afuera/proxy.js",
+        "./src/views/wallet/staking/components/CardanoStakingDashboard": "./src/afuera/component.js",
+        "./src/views/wallet/send/components/Options/CardanoOptions/CardanoOptions": "./src/afuera/component.js",
+        "./src/views/wallet/send/components/Options/EthereumOptions/EthereumOptions": "./src/afuera/component.js"
     }
 }

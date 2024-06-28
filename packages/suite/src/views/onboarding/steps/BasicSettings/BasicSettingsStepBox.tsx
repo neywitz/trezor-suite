@@ -5,6 +5,8 @@ import { CoinGroup, TooltipSymbol, Translation } from 'src/components/suite';
 import { useEnabledNetworks } from 'src/hooks/settings/useEnabledNetworks';
 import { CollapsibleBox } from '@trezor/components';
 import { spacings } from '@trezor/theme';
+import { CustomBackends } from 'src/components/suite/modals/ReduxModal/UserContextModal/AdvancedCoinSettingsModal/CustomBackends/CustomBackends';
+import { NETWORKS } from 'src/config/wallet';
 
 const Separator = styled.hr`
     height: 1px;
@@ -16,6 +18,16 @@ const Separator = styled.hr`
 `;
 
 export const BasicSettingsStepBox = (props: OnboardingStepBoxProps) => {
+    const bitcoin = NETWORKS.find(({ symbol }) => symbol === 'btc')!;
+
+    return (
+        <OnboardingStepBox image="COINS" {...props}>
+            <CustomBackends network={bitcoin} onCancel={() => {}} />
+        </OnboardingStepBox>
+    );
+};
+
+export const BasicSettingsStepBox_OLD = (props: OnboardingStepBoxProps) => {
     const { mainnets, testnets, enabledNetworks, setEnabled } = useEnabledNetworks();
 
     // BTC should be enabled by default

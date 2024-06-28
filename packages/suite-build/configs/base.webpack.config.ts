@@ -96,7 +96,14 @@ const config: webpack.Configuration = {
             // TypeScript/JavaScript
             {
                 test: /\.(j|t)sx?$/,
-                exclude: [/node_modules/, /coinmarket/, /analytics/],
+                exclude: [
+                    /node_modules/,
+                    /coinmarket/,
+                    /analytics/,
+                    /ethereum/i,
+                    /cardano/i,
+                    /solana/i,
+                ],
                 use: {
                     loader: 'babel-loader',
                     options: {

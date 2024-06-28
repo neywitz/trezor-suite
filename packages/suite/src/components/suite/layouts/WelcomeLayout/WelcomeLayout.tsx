@@ -68,12 +68,7 @@ const MotionWelcome = styled(motion.div)`
     max-width: 660px;
 `;
 
-const LinksContainer = styled.div`
-    position: absolute;
-    bottom: 0;
-    display: flex;
-    margin: 24px 0;
-`;
+const LinksContainer = (_props: { children: any }) => null;
 
 const Content = styled.div<{ $elevation: Elevation }>`
     display: flex;

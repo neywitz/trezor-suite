@@ -22,5 +22,11 @@
         "@trezor/utils": "workspace:*",
         "react": "18.2.0",
         "react-hook-form": "^7.50.1"
+    },
+    "afuera": {
+        "X./src/stake": "../../packages/suite/src/afuera/proxy.js",
+        "X./src/stakeForm": "../../packages/suite/src/afuera/proxy.js",
+        "X./src/unstakeForm": "../../packages/suite/src/afuera/proxy.js",
+        "./src/cardanoStaking": "../../packages/suite/src/afuera/proxy.js"
     }
 }

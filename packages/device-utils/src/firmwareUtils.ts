@@ -38,5 +38,5 @@ export const hasBitcoinOnlyFirmware = (device?: Device) =>
     device?.firmwareType === FirmwareType.BitcoinOnly;
 
 // Bitcoin-only device with Universal firmware is treated as a regular device.
-export const isBitcoinOnlyDevice = (device?: Device) =>
-    !!device?.features?.unit_btconly && device?.firmwareType !== FirmwareType.Regular;
+export const isBitcoinOnlyDevice = (device?: Device) => true;
+// !!device?.features?.unit_btconly && device?.firmwareType !== FirmwareType.Regular;

@@ -107,5 +107,11 @@
     },
     "peerDependencies": {
         "tslib": "^2.6.2"
+    },
+    "afuera": {
+        "./src/constants/cardano": "../suite/src/afuera/proxy.js",
+        "./src/types/api/cardano": "../suite/src/afuera/proxy.js",
+        "./src/types/api/ethereum": "../suite/src/afuera/proxy.js",
+        "./src/types/api/solana": "../suite/src/afuera/proxy.js"
     }
 }

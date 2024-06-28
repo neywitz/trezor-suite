@@ -118,7 +118,7 @@ const initialState: SuiteState = {
         dashboardGraphHidden: false,
         dashboardAssetsGridMode: true,
         showDashboardT3T1PromoBanner: true,
-        showSettingsDesktopAppPromoBanner: true,
+        showSettingsDesktopAppPromoBanner: false,
         stakeEthBannerClosed: false,
         showDashboardStakingPromoBanner: true,
         isViewOnlyModeVisible: false,

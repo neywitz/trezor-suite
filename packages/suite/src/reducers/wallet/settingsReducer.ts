@@ -35,7 +35,7 @@ const settingsReducer = (state: State = initialState, action: Action): State =>
 
             case walletSettingsActions.changeNetworks.type: {
                 if (walletSettingsActions.changeNetworks.match(action)) {
-                    draft.enabledNetworks = action.payload;
+                    // draft.enabledNetworks = action.payload;
                 }
                 break;
             }

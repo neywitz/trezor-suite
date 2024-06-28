@@ -40,6 +40,9 @@
         "web3-utils": "^4.2.3"
     },
     "afuera": {
-        "@trezor/suite-analytics": "../../packages/suite/src/afuera/proxy.js"
+        "@trezor/suite-analytics": "../../packages/suite/src/afuera/proxy.js",
+        "./src/send/sendFormCardanoThunks": "../../packages/suite/src/afuera/proxy.js",
+        "./src/send/sendFormEthereumThunks": "../../packages/suite/src/afuera/proxy.js",
+        "./src/send/sendFormSolanaThunks": "../../packages/suite/src/afuera/proxy.js"
     }
 }

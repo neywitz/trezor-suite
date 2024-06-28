@@ -39,7 +39,7 @@ const SettingsHeader = () => {
             },
             {
                 id: 'settings-coins',
-                title: <Translation id="TR_COINS" />,
+                title: <Translation id="TR_NETWORK_BITCOIN" />,
                 position: 'primary',
                 'data-test': '@settings/menu/wallet',
                 callback: () => dispatch(goto('settings-coins', { preserveParams: true })),

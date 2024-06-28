@@ -23,5 +23,8 @@
     "devDependencies": {
         "redux-mock-store": "^1.5.4",
         "redux-thunk": "^2.4.2"
+    },
+    "afuera": {
+        "./src/cardanoConnectPatch": "../../packages/suite/src/afuera/proxy.js"
     }
 }
