@@ -1,3 +1,4 @@
+import { paletteV2SuiteDark } from './paletteV2.suite-dark';
 import { type CSSColor } from './types';
 
 export const paletteV2 = {
@@ -318,4 +319,6 @@ export const paletteV2 = {
     globalWhiteAlpha75: '#FFFFFF17',
     globalWhiteAlpha50: '#FFFFFF0F',
     globalWhiteAlpha25: '#FFFFFF08',
+    // Suite Dark flavour: brand scale retinted green -> Bitcoin orange (#F7931A on the bold step).
+    ...paletteV2SuiteDark,
 } as const satisfies Record<string, CSSColor>;
