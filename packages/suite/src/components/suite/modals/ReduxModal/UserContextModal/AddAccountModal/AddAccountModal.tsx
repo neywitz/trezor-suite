@@ -556,12 +556,17 @@ export const AddAccountModal = ({
                       </Column>
                   ) : (
                       <Column gap={24}>
-                          <NetworkSettingsSearchInput
-                              searchQuery={searchQuery}
-                              onSearchChange={handleSearchChange}
-                              onSearchClear={handleSearchClear}
-                              dataTestId="@modal/account/network-search-input"
-                          />
+                          {
+                              // Suite Dark flavour: the network search box is removed from the Add account modal
+                              (false as boolean) && (
+                                  <NetworkSettingsSearchInput
+                                      searchQuery={searchQuery}
+                                      onSearchChange={handleSearchChange}
+                                      onSearchClear={handleSearchClear}
+                                      dataTestId="@modal/account/network-search-input"
+                                  />
+                              )
+                          }
                           {hasNoSearchResults ? (
                               <Box padding={{ vertical: 32 }}>
                                   <NoNetworkSearchResults dataTestId="@modal/account/no-networks-found" />

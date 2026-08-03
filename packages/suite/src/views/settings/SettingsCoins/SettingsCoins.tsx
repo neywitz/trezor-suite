@@ -204,11 +204,16 @@ export const SettingsCoins = () => {
                 hasContainer={false}
             >
                 <Column gap={24} width="100%">
-                    <NetworkSettingsSearchInput
-                        searchQuery={searchQuery}
-                        onSearchChange={handleSearchChange}
-                        onSearchClear={handleSearchClear}
-                    />
+                    {
+                        // Suite Dark flavour: the network search box is removed from coin settings
+                        (false as boolean) && (
+                            <NetworkSettingsSearchInput
+                                searchQuery={searchQuery}
+                                onSearchChange={handleSearchChange}
+                                onSearchClear={handleSearchClear}
+                            />
+                        )
+                    }
                     {hasNoSearchResults ? (
                         <NoNetworkSearchResults />
                     ) : (
