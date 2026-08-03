@@ -43,6 +43,9 @@ export class QueuedAnalytics<T extends AnalyticsEvent> implements Analytics<T> {
     }
 
     public init = (enabled: boolean | undefined, options: InitOptions) => {
+        // Suite Dark flavour: telemetry hard-disabled. No analytics events are ever sent.
+        if (true as boolean) return;
+
         this.enabled = enabled;
 
         this.instanceId = options.instanceId || getRandomId();
@@ -100,6 +103,9 @@ export class QueuedAnalytics<T extends AnalyticsEvent> implements Analytics<T> {
     };
 
     public report = (data: T, config?: ReportConfig) => {
+        // Suite Dark flavour: telemetry hard-disabled. No analytics events are ever sent.
+        if (true as boolean) return;
+
         // Add a timestamp to each event to track its actual occurrence time, considering possible queuing delays.
         if (!data.timestamp) {
             data.timestamp = Date.now().toString();

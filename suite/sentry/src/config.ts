@@ -91,10 +91,10 @@ const isProd = isCodesignBuild();
 
 // Common Sentry config for all Suite Desktop & Web envs
 export const SENTRY_CONFIG = {
-    dsn: 'https://6d91ca6e6a5d4de7b47989455858b5f6@o117836.ingest.sentry.io/5193825',
+    dsn: '', // Suite Dark flavour: telemetry disabled (empty DSN makes the Sentry SDK a no-op)
 
     beforeSend,
-    enabled: !isDevEnv, // set to true to enable Sentry logging while testing locally
+    enabled: !isDevEnv && (false as boolean), // Suite Dark flavour: telemetry disabled // set to true to enable Sentry logging while testing locally
     maxValueLength: 500, // default 250 is not enough for some errors
     release: process.env.SENTRY_RELEASE,
     environment: isProd ? 'production' : 'develop',

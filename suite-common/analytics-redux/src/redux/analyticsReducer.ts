@@ -19,8 +19,8 @@ export type AnalyticsRootState = {
 export const analyticsInitialState: AnalyticsState = {
     sessionId: undefined,
     instanceId: undefined,
-    enabled: undefined,
-    confirmed: false,
+    enabled: false,
+    confirmed: true,
     customAnalyticsUrl: undefined,
     loggerEnabled: undefined,
 };
