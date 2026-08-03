@@ -53,7 +53,7 @@ const PageHeaderIndex = () => {
     return (
         <Row gap={12}>
             <HeaderDropdown />
-            <TradeActions />
+            {(false as boolean) && <TradeActions /> /* Suite Dark flavour: trading hidden */}
             <GlobalSendReceive />
         </Row>
     );

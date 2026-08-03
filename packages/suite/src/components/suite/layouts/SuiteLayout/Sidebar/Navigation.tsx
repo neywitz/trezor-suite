@@ -47,7 +47,7 @@ export const Navigation = ({ children }: NavigationProps) => {
     const isInitialRun = useSelector(selectIsInitialRun);
     const startRoute: Route['name'] = isInitialRun ? 'suite-start' : 'suite-index';
 
-    const isBtcOnly = useSelector(selectHasBitcoinOnlyFirmware);
+    const isBtcOnly = useSelector(selectHasBitcoinOnlyFirmware) || true; // Suite Dark flavour: show only BTC-only menu items
 
     const hasUnseenNotifications = useSelector(selectHasUnseenNotifications);
     const isActivityNewContentIndicatorVisible = useSelector(

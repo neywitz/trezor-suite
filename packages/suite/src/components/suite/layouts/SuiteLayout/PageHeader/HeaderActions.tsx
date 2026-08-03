@@ -22,7 +22,8 @@ export const HeaderActions = () => {
     const { device } = useDevice();
 
     const accountType = selectedAccount.account?.accountType || routerParams?.accountType || '';
-    const isTradingAvailable = !['coinjoin'].includes(accountType);
+    // Suite Dark flavour: trading hidden
+    const isTradingAvailable = (false as boolean) && !['coinjoin'].includes(accountType);
     const isAccountLoading = selectedAccount.status === 'loading';
     const isDeviceConnected = device?.connected && device?.available;
 
