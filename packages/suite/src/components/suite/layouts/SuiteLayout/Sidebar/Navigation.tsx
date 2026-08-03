@@ -12,7 +12,14 @@ import { useServices } from '@suite-common/dependency-injection';
 import { selectHasBitcoinOnlyFirmware } from '@suite-common/device';
 import { isTransactionNotification } from '@suite-common/toast-notifications';
 import { Column } from '@trezor/components';
-import { BellIcon, GearSixIcon, HouseIcon, PiggyBankIcon, RepeatIcon } from '@trezor/icons';
+import {
+    BellIcon,
+    GearSixIcon,
+    HouseIcon,
+    KeyIcon,
+    PiggyBankIcon,
+    RepeatIcon,
+} from '@trezor/icons';
 
 import { useDispatch, useSelector } from 'src/hooks/suite';
 import { type AppState } from 'src/reducers/store';
@@ -157,6 +164,13 @@ export const Navigation = ({ children }: NavigationProps) => {
                           } as NavigationItemProps,
                       ]
                     : []),
+                {
+                    // Suite Dark flavour: promote the password manager to a full left-menu feature.
+                    nameId: 'TR_PASSWORDS',
+                    icon: KeyIcon,
+                    goToRoute: 'password-manager-index',
+                    routes: ['password-manager-index'],
+                },
                 {
                     nameId: 'TR_NOTIFICATIONS',
                     icon: BellIcon,
