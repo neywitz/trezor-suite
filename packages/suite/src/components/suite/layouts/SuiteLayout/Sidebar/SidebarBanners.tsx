@@ -44,7 +44,8 @@ export const SidebarBanners = () => {
             );
         }
 
-        if (shouldShowNoDeviceEshopBanner) {
+        // Suite Dark flavour: hide eshop banner
+        if (shouldShowNoDeviceEshopBanner && (false as boolean)) {
             return <NoDeviceEshopSidebarBanner />;
         }
 

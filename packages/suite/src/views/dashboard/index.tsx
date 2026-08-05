@@ -14,7 +14,7 @@ import { PortfolioCard } from './PortfolioCard/PortfolioCard';
 import { useNotificationForDisconnectedDevice } from './useNotificationForDisconnectedDevice';
 
 export const Dashboard = () => {
-    useLayout('Home', <PageHeader />, <DashboardFooter />);
+    useLayout('Home', <PageHeader />, (false as boolean) ? <DashboardFooter /> : undefined); // Suite Dark flavour: hide dashboard footer
     useNotificationForDisconnectedDevice();
 
     return (
@@ -25,7 +25,7 @@ export const Dashboard = () => {
                 <PortfolioCard />
                 <OnboardingFeedbackBanner />
             </Column>
-            <DashboardPromoBanner />
+            {(false as boolean) && <DashboardPromoBanner />}
             <AssetsView />
         </Column>
     );
