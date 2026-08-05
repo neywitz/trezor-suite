@@ -103,7 +103,7 @@ export const FirmwareInitialStep = ({ onClose }: FirmwareInitialStepProps) => {
     const devices = useSelector(selectDevices);
     const isDebug = useSelector(selectIsDebugModeActive);
 
-    const [bitcoinOnlyOffer, setBitcoinOnlyOffer] = useState(false);
+    const [bitcoinOnlyOffer, setBitcoinOnlyOffer] = useState(true);
     const [showSkipConfirmation, setShowSkipConfirmation] = useState(false);
 
     // Just to satisfy TS, disconnected device should be handled upstream.
@@ -154,9 +154,12 @@ export const FirmwareInitialStep = ({ onClose }: FirmwareInitialStepProps) => {
             description: (
                 <Column alignItems="center" gap={12}>
                     <Translation id="TR_FIRMWARE_SUBHEADING_BITCOIN" />
-                    <Note>
-                        <Translation id="TR_CHANGE_FIRMWARE_TYPE_ANYTIME" />
-                    </Note>
+                    {/* Suite Dark flavour: hide regular firmware note */}
+                    {(false as boolean) && (
+                        <Note>
+                            <Translation id="TR_CHANGE_FIRMWARE_TYPE_ANYTIME" />
+                        </Note>
+                    )}
                 </Column>
             ),
             innerActions: (
@@ -172,19 +175,22 @@ export const FirmwareInitialStep = ({ onClose }: FirmwareInitialStepProps) => {
                             }}
                         />
                     </InstallButton>
-                    <InstallButton
-                        intent="neutral"
-                        priority="secondary"
-                        onClick={() => installFirmware(FirmwareType.Universal)}
-                        isDisabled={multipleDevicesConnected}
-                    >
-                        <Translation
-                            id="TR_INSTALL_REGULAR"
-                            values={{
-                                regular: <Translation id="TR_FIRMWARE_TYPE_REGULAR" />,
-                            }}
-                        />
-                    </InstallButton>
+                    {/* Suite Dark flavour: hide regular firmware button */}
+                    {(false as boolean) && (
+                        <InstallButton
+                            intent="neutral"
+                            priority="secondary"
+                            onClick={() => installFirmware(FirmwareType.Universal)}
+                            isDisabled={multipleDevicesConnected}
+                        >
+                            <Translation
+                                id="TR_INSTALL_REGULAR"
+                                values={{
+                                    regular: <Translation id="TR_FIRMWARE_TYPE_REGULAR" />,
+                                }}
+                            />
+                        </InstallButton>
+                    )}
                 </Row>
             ),
         };

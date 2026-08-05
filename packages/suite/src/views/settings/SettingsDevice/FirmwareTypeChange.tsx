@@ -71,7 +71,8 @@ export const FirmwareTypeChange = ({ isDeviceLocked }: FirmwareTypeProps) => {
                             )
                         }
                     />
-                    {!bitcoinOnlyDevice && (
+                    {/* Suite Dark flavour: don't show regular firmware button */}
+                    {!bitcoinOnlyDevice && device.firmwareType !== 'bitcoin-only' && (
                         <ActionColumn>
                             <ActionButton
                                 intent="brand"

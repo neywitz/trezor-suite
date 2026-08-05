@@ -135,6 +135,7 @@ export const SettingsCoins = () => {
         !firmwareTypeBannerClosed &&
         device &&
         !bitcoinOnlyDevice &&
+        !bitcoinOnlyFirmware && // Suite Dark flavour: don't show regular firmware suggestion
         (bitcoinOnlyFirmware || (!bitcoinOnlyFirmware && onlyBitcoinNetworksEnabled));
 
     const onToggle = (symbol: NetworkSymbol, isEnabled?: boolean) => {
