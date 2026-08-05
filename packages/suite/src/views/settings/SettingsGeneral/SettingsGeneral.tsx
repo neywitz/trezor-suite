@@ -94,6 +94,7 @@ export const SettingsGeneral = () => {
 
             <div>
                 {isWeb() &&
+                    (false as boolean) && // Suite Dark flavour: hide desktop suite banner
                     !hasContentBelowMobileWidth &&
                     shouldShowSettingsDesktopAppPromoBanner && <DesktopSuiteBanner />}
 
@@ -147,7 +148,7 @@ export const SettingsGeneral = () => {
                 icon={AppWindowIcon}
             >
                 <Theme />
-                <Analytics />
+                {(false as boolean) && <Analytics /> /* Suite Dark flavour: Analytics irrelevant */}
                 <ShowApplicationLog />
                 <ClearStorage />
                 <AutomaticUpdate />
@@ -159,7 +160,8 @@ export const SettingsGeneral = () => {
                 icon={ShieldIcon}
                 hasVerticalLayout={hasContentBelowTabletWidth}
             >
-                {isMevProtectionSettingsVisible && <MevProtection />}
+                {/* Suite Dark flavour: MEV protection irrelevant */}
+                {(false as boolean) && isMevProtectionSettingsVisible && <MevProtection />}
                 <DustPhishing />
             </SettingsSection>
 
@@ -170,9 +172,11 @@ export const SettingsGeneral = () => {
             >
                 {desktopUpdate.enabled && <EarlyAccess />}
                 <AddressDisplay />
-                {isNetworkReserveSettingsVisible && <NetworkReserve />}
+                {/* Suite Dark flavour: Network reserve irrelevant */}
+                {(false as boolean) && isNetworkReserveSettingsVisible && <NetworkReserve />}
                 <TestnetNetworks />
-                <NftSection />
+                {/* Suite Dark flavour: NFTs irrelevant */}
+                {(false as boolean) && <NftSection />}
             </SettingsSection>
 
             {isDesktop() && (
