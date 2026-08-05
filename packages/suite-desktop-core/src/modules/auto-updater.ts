@@ -23,9 +23,10 @@ import { app, ipcMain } from '../typed-electron';
 export const SERVICE_NAME = 'auto-updater';
 
 const defaultFeedURLs = {
-    // This should correspond with the publish.url value in electron-builder-config.js file.
-    latest: 'https://data.trezor.io/suite/releases/desktop/latest',
-    preRelease: 'https://data.trezor.io/suite/releases/desktop/canary',
+    // Suite Dark flavour: updates come from the flavour's own GitHub "continuous" release.
+    // Must correspond with the publish.url value in electron-builder-config.js.
+    latest: 'https://github.com/suite-dark/suite-dark/releases/download/continuous/',
+    preRelease: 'https://github.com/suite-dark/suite-dark/releases/download/continuous/',
 };
 
 // Runtime flags
@@ -54,6 +55,12 @@ export const init: ModuleInit = ({ mainWindowProxy, store }) => {
 
         return;
     }
+
+    // Suite Dark flavour: macOS auto-update is enabled via a stable self-signed code-signing
+    // identity (see patch 0010 + electron-builder-config macSelfSignedIdentity). Squirrel.Mac
+    // accepts the update because the running app and the update share the same cert-based
+    // designated requirement. (Locally-built ad-hoc macOS dev builds can't self-update, but
+    // that's a dev-only build; distributed builds are signed.)
 
     if (process.env.SNAP_NAME || process.env.FLATPAK_ID) {
         logger.info(SERVICE_NAME, 'Disabled - native store');
